@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<style>
+    html {
+        background-image: url('/assets/background.png');
+    }
+</style>
+
+<section class="posts">
+    <h1 class="tagtitle">Tag #{{page.tag}}</h1>
+    <ul>
+        {% for post in site.posts %}
+        {% if post.tags contains page.tag %}
+        <li>
+            <div class="mypost">
+                <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                </h3>
+                <p class="postsummary">{{post.summary}}</p>
+                <p class="postdate" datetime="{{ page.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d,
+                    %Y" }}</p>
+            </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+</section>

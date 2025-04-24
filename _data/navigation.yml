@@ -1,0 +1,8 @@
+links:
+- title: home
+  url: /
+- title: writing
+  url: /writing
+  tag: post
+- title: contact
+  url: /contact

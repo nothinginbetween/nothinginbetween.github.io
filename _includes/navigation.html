@@ -1,0 +1,17 @@
+<header role="banner">
+    <!--<h1 class="logo">{{ site.title }}</h1>-->
+    <nav role="navigation">
+        <ul>
+            {% for item in site.data.navigation.links %}
+            <li><a href="{{ item.url }}" {% if item.url==page.url or item.tag==page.layout %} class="active" {% endif
+                    %}>{{
+                    item.title }}</a></li>
+            {% endfor %}
+            <li style="padding-top:5px;"><a style="padding-right:5px;" href="https://www.twitter.com/noctijess"><img
+                        src="/assets/twitter.png" style="vertical-align: middle; height:18px !important"></a>
+                <!-- <a href="https://www.linkedin.com/in/jessicaezhao/" style="padding-right:5px;"><img
+                        src="/assets/linkedin.png" style="vertical-align: middle; height:18px !important"></a> -->
+            </li>
+        </ul>
+    </nav>
+</header>

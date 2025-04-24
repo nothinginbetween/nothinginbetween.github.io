@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<style>
+    html {
+        background-color: #E1CEEE;
+        background: no-repeat fixed;
+        background-image: url('/assets/background.png');
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    main,
+    .post {
+        padding: 0px !important;
+    }
+
+    header {
+        padding: 2rem !important;
+    }
+
+    .testdiv {
+        background: #fbf7f5;
+        padding-top: min(10%, 60px) !important;
+        padding-left: 7% !important;
+        padding-right: 7% !important;
+        padding-bottom: min(10%, 20px) !important;
+    }
+</style>
+
+<section class="post">
+    <div class="testdiv">
+        <section class="post">
+            <h2 class=posttitle>{{ page.title }}</h2>
+            <p class="postsummaryagg">{{page.summary}}</p>
+            <br>
+            {{ content }}
+            <br>
+            <span class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y"
+                    }}</time>
+                &middot; {% for tag in page.tags %}
+                {% capture tag_name %}{{ tag }}{% endcapture %}
+                <a href="/tag/{{tag_name}}">{{tag_name}}</a>{% unless forloop.last %}, {% endunless %}{% endfor
+                %}</span>
+            <!-- <span>[
+        {% for tag in page.tags %}
+        {% capture tag_name %}{{ tag }}{% endcapture %}
+        <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+        {% endfor %}
+        ]</span> -->
+        </section>
+    </div>
+</section>
